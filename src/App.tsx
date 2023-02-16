@@ -8,8 +8,8 @@ import { ITask } from "./interfaces/Task"
 
 function App() {
 
-  const[taskList, setTaskList] = useState<ITask[]>([]) 
-  
+  const [taskList, setTaskList] = useState<ITask[]>([])
+
   return (
     <div>
       <Header />
@@ -17,10 +17,15 @@ function App() {
         <div>
           <h2>What will you do ?</h2>
         </div>
-        <TaskForm btnText={"Create task"} taskList = {taskList} setTaskList={setTaskList}/>
+        <TaskForm
+          btnText={"Create task"}
+          taskList={taskList}
+          setTaskList={setTaskList} />
         <div>
           <h2>Your tasks</h2>
-          <TaskList />
+          <TaskList 
+           taskList={taskList}
+           />
         </div>
       </main>
 
