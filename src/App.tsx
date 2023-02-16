@@ -19,11 +19,25 @@ function App() {
     )
   }
 
+  const hideOrShowModal = (display: boolean) => {
+    const modal = document.querySelector("#modal")
+    if (display) {
+      modal!.classList.remove("hide");
+    }
+    else {
+      modal!.classList.add("hide");
+    }
+  }
+
+  const editTask = (): void => {
+    hideOrShowModal(true)
+  }
+
   return (
     <div>
       <Modal>
-       <TaskForm btnText="Task edit" taskList={taskList}/>
-      </Modal> 
+        <TaskForm btnText="Task edit" taskList={taskList} />
+      </Modal>
       <Header />
       <main className={styles.main}>
         <div>
@@ -38,6 +52,7 @@ function App() {
           <TaskList
             taskList={taskList}
             handleDelete={deleteTask}
+            handleEdit={editTask}
           />
         </div>
       </main>
