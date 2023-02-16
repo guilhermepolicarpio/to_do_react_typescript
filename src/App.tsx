@@ -13,7 +13,7 @@ function App() {
 
   const deleteTask = (id: number) => {
     setTaskList(
-      taskList.filter((task) =>{
+      taskList.filter((task) => {
         return task.id !== id;
       })
     )
@@ -21,7 +21,9 @@ function App() {
 
   return (
     <div>
-      <Modal/>
+      <Modal>
+       <TaskForm btnText="Task edit" taskList={taskList}/>
+      </Modal> 
       <Header />
       <main className={styles.main}>
         <div>
@@ -33,10 +35,10 @@ function App() {
           setTaskList={setTaskList} />
         <div>
           <h2>Your tasks</h2>
-          <TaskList 
-           taskList={taskList}
-           handleDelete={deleteTask}
-           />
+          <TaskList
+            taskList={taskList}
+            handleDelete={deleteTask}
+          />
         </div>
       </main>
 
