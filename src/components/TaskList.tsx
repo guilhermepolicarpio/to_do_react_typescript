@@ -26,7 +26,7 @@ const TaskList = ({ taskList,handleDelete }: Props) => {
                 ))
                 :
                 (
-                    <p>Não tem tarefas cadastradas</p>
+                    <p>No tasks</p>
                 )
             }
         </>
